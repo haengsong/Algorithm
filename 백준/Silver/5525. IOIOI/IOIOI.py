@@ -9,16 +9,16 @@ for i in range(N+1):
     if i != N:
         P+='O'
 L = len(P)
-pre = ''
 n = 0
 result = 0
-for i in range(M-L+1):
-    if ARR[i] == 'I' and ARR[i+1] == 'O':
+while n <= M-L:
+    if ARR[n] == 'I':
         pre = ''
-        for j in range(i,i+L):
-            pre += ARR[j]
+        for i in range(n,n+L):
+            pre += ARR[i]
         if pre == P:
             result += 1
-
+            n += 1
+    n += 1
 
 print(result)
